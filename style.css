@@ -6,6 +6,7 @@ box-sizing:border-box;
 
 body{
 font-family:Arial, sans-serif;
+overflow:hidden;
 }
 
 header{
@@ -81,9 +82,12 @@ font-weight:bold;
 
 .container{
 display:flex;
+height:calc(100vh - 80px);
 }
 
 .left{
+position:sticky;
+top:0;
 width:18%;
 padding:20px;
 border-right:1px solid #ddd;
@@ -117,14 +121,19 @@ margin-top:15px;
 }
 
 .center{
-width:57%;
-padding:25px;
+    flex:1;
+    height:100vh;
+    overflow-y:auto;
+    padding-right:10px;
 }
 
 .rightbar{
 width:25%;
 padding:25px;
 border-left:1px solid #ddd;
+position:sticky;
+top:0;
+height:100vh;
 }
 
 .tabs{
@@ -136,7 +145,7 @@ border-bottom:1px solid #ddd;
 }
 
 .post{
-padding:30px 0;
+padding:10px 0;
 border-bottom:1px solid #ddd;
 }
 
@@ -144,7 +153,7 @@ border-bottom:1px solid #ddd;
 display:flex;
 justify-content:space-between;
 align-items:center;
-gap:25px;
+gap:10px;
 }
 
 .post-content > div{
@@ -152,8 +161,9 @@ flex:1;
 }
 
 .post-content img{
-width:170px;
-height:120px;
+max-width:120px;
+width:100%;
+height:auto;
 object-fit:cover;
 border-radius:5px;
 }
@@ -177,8 +187,8 @@ line-height:1.5;
 .bottom-row{
 display:flex;
 align-items:center;
-margin-top:15px;
-gap:20px;
+margin-top:8px;
+gap:10px;
 }
 
 .stats{
@@ -191,6 +201,7 @@ color:gray;
 display:flex;
 gap:25px;
 color:gray;
+margin-left:290px;
 }
 
 .pick{
@@ -200,4 +211,207 @@ border-bottom:1px solid #ddd;
 
 .pick p{
 margin-top:8px;
+}
+
+@media (max-width: 768px){
+
+    .container{
+        flex-direction: column;
+    }
+
+    .left,
+    .center,
+    .rightbar{
+        width:100%;
+        border:none;
+    }
+
+    .search-box{
+        width:250px;
+    }
+
+    .post-content{
+        flex-direction: column;
+        align-items:flex-start;
+    }
+
+    .post-content img{
+        width:100%;
+        height:auto;
+    }
+}
+
+@media (max-width: 480px){
+
+    header{
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    .search-box{
+        width:100%;
+    }
+
+    .nav-right{
+        gap:10px;
+        flex-wrap:wrap;
+    }
+
+    .tabs{
+        flex-wrap:wrap;
+    }
+
+    .post h3{
+        font-size:18px;
+    }
+
+    .author{
+        white-space:normal;
+    }
+
+    .stats,
+    .post-actions{
+        gap:10px;
+        flex-wrap:wrap;
+    }
+}
+
+@media (max-width:768px){
+
+    .left{
+        display:none;
+    }
+
+    .center{
+        width:100%;
+    }
+
+    .rightbar{
+        width:100%;
+    }
+}
+
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode .post,
+.dark-mode .left,
+.dark-mode .rightbar,
+.dark-mode header{
+    background:#121212;
+    color:white;
+}
+
+#title,
+#content{
+    width:100%;
+    padding:10px;
+}
+
+#content{
+    height:120px;
+}
+
+#publishBtn{
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+
+.comment-box{
+    margin-top:10px;
+}
+
+.comment-input{
+    width:100%;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.comment-box{
+    margin-top:10px;
+}
+
+.comment-input{
+    width:100%;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+#notificationBox{
+    position:absolute;
+    top:70px;
+    right:80px;
+    background:white;
+    border:1px solid #ddd;
+    padding:15px;
+    width:250px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode header{
+    background:#1e1e1e;
+    border-bottom:1px solid #333;
+}
+
+.dark-mode .left,
+.dark-mode .center,
+.dark-mode .rightbar{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode .post{
+    border-bottom:1px solid #333;
+}
+
+.dark-mode input,
+.dark-mode textarea{
+    background:#222;
+    color:white;
+    border:1px solid #444;
+}
+
+.dark-mode .pick{
+    border-bottom:1px solid #333;
+}
+
+.dark-mode a{
+    color:#90caf9;
+}
+
+#profileBox{
+    position:absolute;
+    top:70px;
+    right:20px;
+    background:white;
+    border:1px solid #ddd;
+    padding:15px;
+    width:220px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dark-mode #profileBox{
+    background:#1e1e1e;
+    color:white;
+    border:1px solid #444;
+}
+
+.following{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }

@@ -18,7 +18,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <header>
 
 <div class="left-header">
-    <i class="fa-solid fa-bars menu"></i>
+    <i class="fa-solid fa-bars menu" id="menuBtn"></i>
 
     <div class="logo">
         Medium
@@ -32,26 +32,42 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <div class="nav-right">
 
-    <button>Get App</button>
+    <button id="getAppBtn">Get App</button>
 
-    <div class="write">
+    <div class="write" id="writeBtn">
         <i class="fa-regular fa-pen-to-square"></i>
         <span>Write</span>
     </div>
 
-    <i class="fa-regular fa-bell bell"></i>
+    <i class="fa-regular fa-bell bell" id="bellBtn"></i>
 
-    <div class="profile">S</div>
+    <button id="darkModeBtn">🌙</button>
+
+    <div class="profile" id="profileBtn">S</div>
 
 </div>
 
 </header>
 
+<div id="profileBox" style="display:none;">
+
+    <h3>Sandhya Yadav</h3>
+
+    <p>B.Tech CSE (Data Science)</p>
+
+    <p>Medium Clone Developer</p>
+
+</div>
+
+<div id="notificationBox" style="display:none;">
+    <h4>Notifications</h4>
+    <p>New article published!</p>
+    <p>You have 3 new followers.</p>
+</div>
+
 <div class="container">
 
-<!-- LEFT SIDEBAR -->
-
-<aside class="left">
+<aside class="left" id="sidebar">
 
 <ul>
 
@@ -65,7 +81,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <hr>
 
-<div class="following-heading">
+<div class="following">
     <i class="fa-solid fa-users"></i>
     <h3>Following</h3>
 </div>
@@ -84,8 +100,6 @@ Find writers and publications to follow.
 
 </aside>
 
-<!-- CENTER -->
-
 <main class="center">
 
 <div class="tabs">
@@ -93,7 +107,17 @@ Find writers and publications to follow.
 <span>Featured</span>
 </div>
 
-<!-- POST 1 -->
+<div id="writeForm" style="display:none;">
+
+    <input type="text" id="title" placeholder="Enter title">
+
+    <textarea id="content" placeholder="Write your story"></textarea>
+
+    <button id="publishBtn">
+        Publish
+    </button>
+
+</div>
 
 <div class="post">
 
@@ -120,9 +144,15 @@ Most people do it within 10 minutes of waking up
 </div>
 
 <div class="post-actions">
-<i class="fa-regular fa-comment"></i>
-<i class="fa-regular fa-bookmark"></i>
+<i class="fa-regular fa-comment comment-btn"></i>
+<i class="fa-regular fa-bookmark bookmark-btn"></i>
 <i class="fa-solid fa-ellipsis"></i>
+</div>
+
+<div class="comment-box" style="display:none;">
+    <input type="text"
+           placeholder="Write a comment..."
+           class="comment-input">
 </div>
 
 </div>
@@ -134,8 +164,6 @@ Most people do it within 10 minutes of waking up
 </div>
 
 </div>
-
-<!-- POST 2 -->
 
 <div class="post">
 
@@ -161,9 +189,15 @@ Books improve imagination and critical thinking skills.
 </div>
 
 <div class="post-actions">
-<i class="fa-regular fa-comment"></i>
-<i class="fa-regular fa-bookmark"></i>
+<i class="fa-regular fa-comment comment-btn"></i>
+<i class="fa-regular fa-bookmark bookmark-btn"></i>
 <i class="fa-solid fa-ellipsis"></i>
+</div>
+
+<div class="comment-box" style="display:none;">
+    <input type="text"
+           placeholder="Write a comment..."
+           class="comment-input">
 </div>
 
 </div>
@@ -175,8 +209,6 @@ Books improve imagination and critical thinking skills.
 </div>
 
 </div>
-
-<!-- POST 3 -->
 
 <div class="post">
 
@@ -202,9 +234,15 @@ AI is rapidly transforming every industry.
 </div>
 
 <div class="post-actions">
-<i class="fa-regular fa-comment"></i>
-<i class="fa-regular fa-bookmark"></i>
+<i class="fa-regular fa-comment comment-btn"></i>
+<i class="fa-regular fa-bookmark bookmark-btn"></i>
 <i class="fa-solid fa-ellipsis"></i>
+</div>
+
+<div class="comment-box" style="display:none;">
+    <input type="text"
+           placeholder="Write a comment..."
+           class="comment-input">
 </div>
 
 </div>
@@ -216,8 +254,6 @@ AI is rapidly transforming every industry.
 </div>
 
 </div>
-
-<!-- POST 4 -->
 
 <div class="post">
 
@@ -243,9 +279,15 @@ Small daily habits lead to big results.
 </div>
 
 <div class="post-actions">
-<i class="fa-regular fa-comment"></i>
-<i class="fa-regular fa-bookmark"></i>
+<i class="fa-regular fa-comment comment-btn"></i>
+<i class="fa-regular fa-bookmark bookmark-btn"></i>
 <i class="fa-solid fa-ellipsis"></i>
+</div>
+
+<div class="comment-box" style="display:none;">
+    <input type="text"
+           placeholder="Write a comment..."
+           class="comment-input">
 </div>
 
 </div>
@@ -257,8 +299,6 @@ Small daily habits lead to big results.
 </div>
 
 </div>
-
-<!-- POST 5 -->
 
 <div class="post">
 
@@ -284,9 +324,15 @@ Learn simple techniques to improve concentration and productivity.
 </div>
 
 <div class="post-actions">
-<i class="fa-regular fa-comment"></i>
-<i class="fa-regular fa-bookmark"></i>
+<i class="fa-regular fa-comment comment-btn"></i>
+<i class="fa-regular fa-bookmark bookmark-btn"></i>
 <i class="fa-solid fa-ellipsis"></i>
+</div>
+
+<div class="comment-box" style="display:none;">
+    <input type="text"
+           placeholder="Write a comment..."
+           class="comment-input">
 </div>
 
 </div>
@@ -300,8 +346,6 @@ Learn simple techniques to improve concentration and productivity.
 </div>
 
 </main>
-
-<!-- RIGHT SIDEBAR -->
 
 <aside class="rightbar">
 
@@ -333,6 +377,8 @@ Learn simple techniques to improve concentration and productivity.
 </aside>
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
